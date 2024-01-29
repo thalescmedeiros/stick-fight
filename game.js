@@ -41,17 +41,7 @@ class Sprite {
             h = this.currentSprite.frameSize.h * this.currentSprite.scale;
         if (this.direction == 0) {
             c.save();
-            let horizontal = true, vertical = false;
-            c.setTransform(-1, 0,
-                0, 1,
-                x + w + x,
-                0);
-            // c.setTransform(
-            //     horizontal ? -1 : 1, 0, // set the direction of x axis
-            //     0, vertical ? -1 : 1,   // set the direction of y axis
-            //     x + (horizontal ? w : 0), // set the x origin
-            //     y + (vertical ? h : 0)   // set the y origin
-            // );
+            c.setTransform(-1, 0, 0, 1, x + w + x, 0);
         }
         c.drawImage(
             /* image */ this.currentSprite.image,

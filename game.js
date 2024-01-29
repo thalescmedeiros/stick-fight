@@ -91,6 +91,7 @@ class Fighter extends Sprite {
             this.velocity.x = dx;
             this.switchToSprite(dx == 0 ? 'idle' : 'run');
         }
+        if (top && this.velocity.y == 0) this.velocity.y -= 18;
     }
 
     update(time) {

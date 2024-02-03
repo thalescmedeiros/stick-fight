@@ -269,6 +269,11 @@ window.addEventListener('load', _ => {
 
     audioSources.forEach(src => {
         const audioElement = new Audio(src);
+        audioElement.loop = true;
+        // audioElement.addEventListener('ended', _ => {
+        //     audioElement.currentTime = 0;
+        //     audioElement.play();
+        // }, false);
         promises.push(new Promise(res => audioElement.addEventListener("loadeddata", _ => res())));
         allAudios.push(audioElement);
     });
